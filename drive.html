@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Drive - DreamLoop</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="js/game.js"></script>
+</head>
+<body>
+  <h1>You’re picked up and begin driving...</h1>
+  <img src="assets/drive.gif" alt="Drive" />
+  <p>Select radio music:</p>
+  <button onclick="chooseMusic('jazz')">🎷 Romantic Jazz</button>
+  <button onclick="chooseMusic('lofi')">🎧 Lo-fi Beats</button>
+
+  <script>
+    function chooseMusic(type) {
+      setMusic(type);
+      const audio = new Audio(`assets/music/${type}.mp3`);
+      audio.volume = 0.3;
+      audio.play();
+      setTimeout(() => {
+        window.location.href = 'mountain.html';
+      }, 5000); // Wait 5 seconds then move
+    }
+  </script>
+</body>
+</html>
